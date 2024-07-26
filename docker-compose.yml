@@ -1,0 +1,80 @@
+# Define the networks used by services
+networks:
+  sloader_net:
+    # Define custom network options if needed
+    driver: bridge
+
+# Define the services
+services:
+  # Web server service
+  webserver:
+    # Build context for the Dockerfile
+    build:
+      context: ./web
+
+    # Expose ports for HTTP and HTTPS
+    ports:
+      - "80:80"
+      - "443:443"
+
+    # Dependencies on MySQL database service
+    depends_on:
+      - mysql_db
+
+    # Mount volumes for web content
+    volumes:
+      - ./web/www:/var/www/html
+
+    # Attach to the sloader_net network
+    networks:
+      - sloader_net
+
+  # MySQL database service
+  mysql_db:
+    # Build context for the Dockerfile
+    build:
+      context: ./mysql
+      
+    # Mount volumes for database persistence
+    volumes:
+      - ./sloader_db:/var/lib/mysql
+
+    # Attach to the sloader_net network
+    networks:
+      - sloader_net
+
+  # phpMyAdmin service
+  phpmyadmin:
+    # Build context for the Dockerfile
+    build:
+      context: ./phpmyadmin
+
+    # Link to MySQL database service
+    links:
+      - mysql_db
+
+    # Dependencies on MySQL database service
+    depends_on:
+      - mysql_db
+
+    # Expose port for phpMyAdmin UI
+    ports:
+      - "8080:80"
+
+    # Attach to the sloader_net network
+    networks:
+      - sloader_net
+
+  # Rust builder service
+  builder:
+    # Build context for the Dockerfile
+    build:
+      context: ./builder
+
+    # Mount volumes for Rust implant
+    volumes:
+      - ./builder/implant_source:/implant
+      
+    # Attach to the sloader_net network
+    networks:
+      - sloader_net
