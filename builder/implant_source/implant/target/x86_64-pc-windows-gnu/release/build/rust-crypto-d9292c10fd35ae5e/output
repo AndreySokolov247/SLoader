@@ -1,0 +1,58 @@
+TARGET = Some("x86_64-pc-windows-gnu")
+OPT_LEVEL = Some("3")
+TARGET = Some("x86_64-pc-windows-gnu")
+HOST = Some("x86_64-unknown-linux-gnu")
+TARGET = Some("x86_64-pc-windows-gnu")
+TARGET = Some("x86_64-pc-windows-gnu")
+HOST = Some("x86_64-unknown-linux-gnu")
+CC_x86_64-pc-windows-gnu = None
+CC_x86_64_pc_windows_gnu = None
+TARGET_CC = None
+CC = None
+HOST = Some("x86_64-unknown-linux-gnu")
+CROSS_COMPILE = None
+TARGET = Some("x86_64-pc-windows-gnu")
+HOST = Some("x86_64-unknown-linux-gnu")
+CFLAGS_x86_64-pc-windows-gnu = None
+CFLAGS_x86_64_pc_windows_gnu = None
+TARGET_CFLAGS = None
+CFLAGS = None
+DEBUG = Some("false")
+running: "x86_64-w64-mingw32-gcc" "-O3" "-ffunction-sections" "-fdata-sections" "-m64" "-Wall" "-Wextra" "-o" "/implant/implant/target/x86_64-pc-windows-gnu/release/build/rust-crypto-d9292c10fd35ae5e/out/src/util_helpers.o" "-c" "src/util_helpers.c"
+exit status: 0
+TARGET = Some("x86_64-pc-windows-gnu")
+OPT_LEVEL = Some("3")
+TARGET = Some("x86_64-pc-windows-gnu")
+HOST = Some("x86_64-unknown-linux-gnu")
+TARGET = Some("x86_64-pc-windows-gnu")
+TARGET = Some("x86_64-pc-windows-gnu")
+HOST = Some("x86_64-unknown-linux-gnu")
+CC_x86_64-pc-windows-gnu = None
+CC_x86_64_pc_windows_gnu = None
+TARGET_CC = None
+CC = None
+HOST = Some("x86_64-unknown-linux-gnu")
+CROSS_COMPILE = None
+TARGET = Some("x86_64-pc-windows-gnu")
+HOST = Some("x86_64-unknown-linux-gnu")
+CFLAGS_x86_64-pc-windows-gnu = None
+CFLAGS_x86_64_pc_windows_gnu = None
+TARGET_CFLAGS = None
+CFLAGS = None
+DEBUG = Some("false")
+running: "x86_64-w64-mingw32-gcc" "-O3" "-ffunction-sections" "-fdata-sections" "-m64" "-Wall" "-Wextra" "-o" "/implant/implant/target/x86_64-pc-windows-gnu/release/build/rust-crypto-d9292c10fd35ae5e/out/src/aesni_helpers.o" "-c" "src/aesni_helpers.c"
+exit status: 0
+TARGET = Some("x86_64-pc-windows-gnu")
+TARGET = Some("x86_64-pc-windows-gnu")
+HOST = Some("x86_64-unknown-linux-gnu")
+AR_x86_64-pc-windows-gnu = None
+AR_x86_64_pc_windows_gnu = None
+TARGET_AR = None
+AR = None
+TARGET = Some("x86_64-pc-windows-gnu")
+TARGET = Some("x86_64-pc-windows-gnu")
+running: "ar" "crs" "/implant/implant/target/x86_64-pc-windows-gnu/release/build/rust-crypto-d9292c10fd35ae5e/out/lib_rust_crypto_helpers.a" "/implant/implant/target/x86_64-pc-windows-gnu/release/build/rust-crypto-d9292c10fd35ae5e/out/src/util_helpers.o" "/implant/implant/target/x86_64-pc-windows-gnu/release/build/rust-crypto-d9292c10fd35ae5e/out/src/aesni_helpers.o"
+exit status: 0
+TARGET = Some("x86_64-pc-windows-gnu")
+cargo:rustc-link-lib=static=_rust_crypto_helpers
+cargo:rustc-link-search=native=/implant/implant/target/x86_64-pc-windows-gnu/release/build/rust-crypto-d9292c10fd35ae5e/out

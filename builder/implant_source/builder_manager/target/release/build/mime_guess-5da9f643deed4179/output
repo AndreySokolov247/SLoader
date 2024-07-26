@@ -1,0 +1,1 @@
+cargo:rustc-env=MIME_TYPES_GENERATED_PATH=/implant/builder_manager/target/release/build/mime_guess-5da9f643deed4179/out/mime_types_generated.rs
